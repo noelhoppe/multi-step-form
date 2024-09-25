@@ -1,0 +1,178 @@
+/* BEGINN COLOR VARIABLES & FONT-FACE */
+:root {
+    /* primary colors */
+    --clr-primary-marine-blue: hsl(213, 96%, 18%);
+    --clr-primary-purplish-blue: hsl(243, 100%, 62%);
+    --clr-primary-pastel-blue: hsl(228, 100%, 84%);
+    --clr-primary-light-blue: hsl(206, 94%, 87%);
+    --clr-primary-strawberry-red: hsl(354, 84%, 57%);
+
+    /* neutral colors */
+    --clr-neutral-cool-gray: hsl(231, 11%, 63%);
+    --clr-neutral-light-gray: hsl(229, 24%, 87%);
+    --clr-neutral-magnolia: hsl(217, 100%, 97%);
+    --clr-neutral-alabaster: hsl(231, 100%, 99%);
+    --clr-neutral-white: hsl(0, 0%, 100%);
+}
+
+@font-face {
+    font-family: "Ubuntu", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    src: url("./assets/fonts/Ubuntu-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Ubuntu", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    src: url("./assets/fonts/Ubuntu-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Ubuntu", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    src: url("./assets/fonts/Ubuntu-Bold.ttf") format("truetype");
+}
+
+* {
+    font-family: "Ubuntu", sans-serif;
+}
+/* END COLOR VARIABLES & FONT FACE */
+
+p, h2 {
+    margin: 0.5rem 0;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.center-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-neutral-magnolia);
+}
+
+.multiStepForm {
+    max-width: 768px;
+    display: grid;
+    grid-template-columns: 15rem 1fr;
+    padding: 1rem;
+    border-radius: 16px;
+    background-color: var(--clr-neutral-white);
+}
+
+.multiStepForm__content {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 6rem;
+    gap: 3rem;
+}
+
+.multiStepForm__content__header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--clr-primary-marine-blue);
+}
+
+.multiStepForm__content__header p {
+    color: var(--clr-neutral-cool-gray);
+}
+
+.multiStepForm__content__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.multiStepForm__content__form__formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.multiStepForm__content__form__formGroup span {
+    align-self: flex-end;
+    color: var(--clr-primary-strawberry-red)
+}
+
+.multiStepForm__content__form__formGroup input {
+    border-radius: 4px;
+    border: 1px solid var(--clr-neutral-cool-gray);
+    padding: 0.5rem;
+}
+
+.multiStepForm__content__form__formGroup input::placeholder {
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+}
+
+.multiStepForm__content__btnGroup {
+    display: flex;
+    justify-content: space-between;
+}
+
+.multiStepForm__content__btnGroup__btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.goBackBtn {
+    background-color: var(--clr-neutral-alabaster);
+    color: var(--clr-neutral-cool-gray)
+}
+
+.nextStepBtn {
+    background-color: var(--clr-primary-marine-blue);
+    color: var(--clr-neutral-white)
+}
+
+/* md / tablet */
+@media screen and (max-width: 768px) {
+    .center-container {
+        position: relative;
+    }
+
+    .multiStepForm {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+
+    .multiStepForm {
+        background-color: var(--clr-neutral-magnolia);
+    }
+
+    .multiStepForm__content {
+        z-index: 999;
+        background-color: var(--clr-neutral-white);
+        border-radius: 16px;
+        padding: 1rem 2rem;
+        gap: 1rem;
+        margin: 0 1rem;
+    }
+
+    .multiStepForm__content__btnGroup {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        height: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--clr-neutral-white);
+    }
+}
